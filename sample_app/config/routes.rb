@@ -1,18 +1,20 @@
 Rails.application.routes.draw do
-  root 'static_pages#home'
+    get 'users/new'
 
-  # using the get '/help', to: 'static_pages#help'
-  # rails creates to paths the 
-  # help_path -> '/help'  AND THE help_url -> 'http://www.example.com/help'
+    root 'static_pages#home'
 
-  get '/help',       to: 'static_pages#help'
-  get '/about',      to: 'static_pages#about'
-  get '/contact',    to: 'static_pages#contact'
+    # using the get '/help', to: 'static_pages#help'
+    # rails creates to paths the 
+    # help_path -> '/help'  AND THE help_url -> 'http://www.example.com/help'
+
+    get '/help',       to: 'static_pages#help'
+    get '/about',      to: 'static_pages#about'
+    get '/contact',    to: 'static_pages#contact'
+    get '/signup',     to: 'users#new'    
+
+    # Note: get 'static_pages/help' make a symbol avaialble
+    # such as, static_pages_help_url
 
 
-  # Note: get 'static_pages/help' make a symbol avaialble
-  # such as, static_pages_help_url
-
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+    # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
