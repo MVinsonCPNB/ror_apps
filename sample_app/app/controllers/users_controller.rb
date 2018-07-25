@@ -1,12 +1,7 @@
 class UsersController < ApplicationController
  
     def show
-        #TODO the redirect to show from the create method tries to 
-        #access user_params, and user_params shows there is no 
-        #paramert passed to this method, either create a gloable 
-        #call method set within user_params or within user.save true
-        #if statment section
-        @user = User.find(@user.id)
+        @user = User.find(params[:id])
 
         # the dubugger opens a active debuggin console 
         # in the rails server terminal used to view
@@ -24,7 +19,8 @@ class UsersController < ApplicationController
         
         if @user.save
             flash[:success] = "Welcome to the Sample App!"
-            # (BELOW) equivalent redirect_to user_url(@user)
+            # (BELOW) equivalent redirect_to user_url(@user).
+            # automatically loads the users/show page.
             redirect_to @user
         else
             render 'new'
