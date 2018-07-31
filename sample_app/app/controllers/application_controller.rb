@@ -4,6 +4,8 @@ class ApplicationController < ActionController::Base
     
         # Stores temp cookies which are destroyed
         # upon the user closing the browser
-    include SessionHelper
+        # Because it is in ApplicationConroller
+        #  SessionHelper available in all views
+    include SessionsHelper
 
 end
